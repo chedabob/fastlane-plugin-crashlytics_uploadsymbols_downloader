@@ -1,0 +1,18 @@
+lane :test_latest do
+  crashlytics_uploadsymbols_downloader
+end
+
+lane :test_version do
+    crashlytics_uploadsymbols_downloader(version:'7.10.0')
+end
+
+lane :test_version_alt do
+    crashlytics_uploadsymbols_downloader(version:'v8.15.0')
+end
+
+lane :test_all do
+    test_latest
+    test_version
+    test_version_alt
+end
+
